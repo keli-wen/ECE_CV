@@ -5,7 +5,7 @@
 
 下面是实验环境截图，通过给定的 `predict.py` 和使用预训练好的权重文件 `yolov5s-seg.pt` 对图片进行预测。
 
-![image-20221205162607517](/Users/wenkeli/Desktop/PKU_ECE/课程内容/CV/ECE_CV/Week11/assets/experiment.png)
+![image-20221205162607517](assets/experiment.png)
 
 测试得到的图片如下：
 
@@ -23,8 +23,8 @@
 
 YoloV5 和之前版本的不同之处具体是？
 
-1. 之前版本的yolo是将图片resize到$416\times 416$，然后将图片分成13 $\times$ 13的网格，每个网格预测5个bounding box，每个bounding box预测$5$个值，分别是`x,y,w,h,confidence`，然后将这些值转换成真实的bounding box的值，然后将这些bounding box的值进行NMS，最后将NMS后的bounding box画出来。
-2. YoloV5是将图片resize到$640\times  640$，然后将图片分成$20\times 20$的网格，每个网格预测3个bounding box，每个bounding box预测6个值，分别是`x,y,w,h,confidence,class`，然后将这些值转换成真实的bounding box的值，然后将这些bounding box的值进行NMS，最后将NMS后的bounding box画出来。
+1. 之前版本的yolo是将图片resize到 $416\times 416$，然后将图片分成13 $\times$ 13的网格，每个网格预测5个bounding box，每个bounding box预测$5$个值，分别是`x,y,w,h,confidence`，然后将这些值转换成真实的bounding box的值，然后将这些bounding box的值进行NMS，最后将NMS后的bounding box画出来。
+2. YoloV5是将图片resize到 $640\times  640$ ，然后将图片分成 $20\times 20$ 的网格，每个网格预测3个bounding box，每个bounding box预测6个值，分别是`x,y,w,h,confidence,class`，然后将这些值转换成真实的bounding box的值，然后将这些bounding box的值进行NMS，最后将NMS后的bounding box画出来。
 
 还有一些配置上的不同，配置文件的格式不同，之前版本的yolo是将配置文件写在代码里面，而YoloV5是将配置文件写在yaml文件里面，然后在代码里面读取yaml文件。
 
